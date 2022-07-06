@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "44f791ec-dcff-437f-9e07-276db4761158"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "upskill-harshit": {
+    "Upskill_Practice_Harshit": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/upskill-harshit",
+            "outputPath": "dist/upskill-practice-harshit",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "upskill-harshit:build:production"
+              "browserTarget": "Upskill_Practice_Harshit:build:production"
             },
             "development": {
-              "browserTarget": "upskill-harshit:build:development"
+              "browserTarget": "Upskill_Practice_Harshit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "upskill-harshit:build"
+            "browserTarget": "Upskill_Practice_Harshit:build"
           }
         },
         "test": {
@@ -102,5 +108,5 @@
       }
     }
   },
-  "defaultProject": "upskill-harshit"
+  "defaultProject": "Upskill_Practice_Harshit"
 }
