@@ -1,12 +1,15 @@
 <div class="container">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <div class="text-danger text-center" *ngIf="errormsg">{{errormsg.message}}</div>
+  
+  <div *ngIf="Books.length>0">  
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h2 class="h2">Books List</h2>
     </div>
-    <div class="table-responsive">
+    
+    <div class="table-responsive" >
       <table class="table table-bordered">
         <thead>
           <tr>
-            <!-- <th scope="col">Id</th> -->
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Description</th>
@@ -14,20 +17,19 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <div *ngIf="Books.length===0" class="invalid-feedback">Record Not Found</div>
-          <a class="btn btn-danger" onclick="toastr.error('Hi! I am error message.');">Error message</a>
-           -->
           
           <tr *ngFor="let book of Books; let i = index">
-            <!-- <th scope="row">{{book._id}}</th> -->
             <td>{{book.name}}</td>
             <td>{{book.price}}</td>
             <td>{{book.description}}</td>
             <td class="text-center">
-              <button class="btn btn-sm btn-primary"  (click)="editBook(book._id)">Edit</button>
+              <button class="btn btn-sm btn-primary me-2"  (click)="editBook(book._id)">Edit</button>
               <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
           </tr>
         </tbody>
       </table>
     </div>
+    </div>
+    <!-- else part -->
+    <div *ngIf="Books.length==0 && (errormsg=='' || errormsg== undefined)" class="text-center text-danger">Sorry Could Not find Books</div>
   </div>

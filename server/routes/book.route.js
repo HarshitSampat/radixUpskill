@@ -4,7 +4,6 @@ const bookRoute = express.Router();
 let Book = require('../model/Book');
 // Add Book
 bookRoute.route('/add-book').post((req, res, next) => {
-  console.log("book added Harshit"+req)
     Book.create(req.body, (error, data) => {
     if (error) {
       return next(error)
@@ -16,7 +15,7 @@ bookRoute.route('/add-book').post((req, res, next) => {
 // Get all Book
 
 bookRoute.route('/').get((req, res) => {
-console.log("Harshit api called");
+  console.log("Get Api called");
     Book.find((error, data) => {
     if (error) {
       return next(error)

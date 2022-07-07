@@ -39,7 +39,7 @@ export class BookDetailComponent implements OnInit {
     this.crudService.updateBook(this.getId, this.updateForm.value)
     .subscribe(() => {
         console.log('Data updated successfully!')
-        this.ngZone.run(() => this.router.navigateByUrl('/books-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/books/book-list'))
       }, (err) => {
         console.log(err);
     });

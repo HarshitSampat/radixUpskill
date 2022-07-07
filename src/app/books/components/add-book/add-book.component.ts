@@ -27,15 +27,15 @@ export class AddBookComponent implements OnInit {
   }
   ngOnInit() {
      this.bookId = this.route.snapshot.paramMap.get('id');
-    console.log(this.bookId);
     if(this.bookId){
       this.buttonName="Edit"
-      
-      // this.formBuilder.group({
-      //   name: [''],
-      //   price: [''],
-      //   description: ['']
-      // })
+      this.crudService.GetBook(this.bookId).subscribe(res => {
+        this.bookForm.setValue({
+          name: res['name'],
+          price: res['price'],
+          description: res['description']
+        });
+      });
     }
    }
   onSubmit(): any {

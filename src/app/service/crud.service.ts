@@ -61,7 +61,8 @@ export class CrudService {
       // Handle server error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log(errorMessage);
+    // console.log(errorMessage);
+    errorMessage
     return throwError(errorMessage);
   }
 }

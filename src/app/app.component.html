@@ -1,30 +1,35 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">BYB</a>
+  <a class="navbar-brand ms-5" href="/">BYB</a>
   <div id="navbarNav" class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto ">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/books/book-list">Show Books</a>
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/books/book-list"
+          >Show Books</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/books/add-book">Add Books</a>
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/books/add-book"
+          >Add Books</a
+        >
       </li>
     </ul>
   </div>
 </nav>
 
-
 <div class="container">
-  <!-- <h1 class="text-primary text-center">
-    {{ title }}
-  </h1>
+ 
+   <div>
+    <h2 class="text-center mt-5 text-primary">
+      Welcome To Book Your Self With Book
+    </h2>
+    </div>
 
-  <div class="">
-    <button type="button" class="btn btn-secondary ms-1" routerLink="">Home</button>
-    <button type="button" class="btn btn-primary ms-1" routerLink="/books">Books</button>
-    <button type="button" class="btn btn-success ms-1" routerLink="/orders">Orders</button>
-  </div>
-   -->
-   
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+  <lib-ng-toast></lib-ng-toast>
 </div>
